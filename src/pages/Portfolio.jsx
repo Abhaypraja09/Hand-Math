@@ -18,7 +18,7 @@ const PortfolioPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-white/60"
+            className="text-xl text-navy/60"
           >
             Explore our latest projects and case studies where we've helped businesses achieve digital excellence.
           </motion.p>

@@ -14,7 +14,7 @@ const ContactPage = () => {
           >
             Let's <span className="text-gold">Connect</span>
           </motion.h1>
-          <p className="text-xl text-white/60">
+          <p className="text-xl text-navy/60">
             Have a project in mind or just want to say hi? We'd love to hear from you.
           </p>
         </div>

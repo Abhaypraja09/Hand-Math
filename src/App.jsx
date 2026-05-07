@@ -18,7 +18,7 @@ const ServiceDetail = lazy(() => import('./pages/ServiceDetail'));
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-offwhite text-navy font-body selection:bg-electric selection:text-white">
+      <div className="min-h-screen bg-offwhite text-navy font-body selection:bg-electric selection:text-white overflow-x-hidden">
         <Suspense fallback={<LoadingScreen />}>
           <Navbar />
           <Routes>

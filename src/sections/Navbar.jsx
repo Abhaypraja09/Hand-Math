@@ -98,14 +98,14 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden glass border-b border-black/5 overflow-hidden"
           >
-            <div className="container mx-auto px-6 py-8 flex flex-col gap-6">
+            <div className="container mx-auto px-6 py-10 flex flex-col gap-8">
               {navLinks.map((link) => (
                 <RouterLink
                   key={link.name}
                   to={link.path}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={cn(
-                    "text-xl font-heading transition-colors",
+                    "text-2xl font-heading font-bold transition-colors",
                     location.pathname === link.path ? "text-electric" : "text-navy"
                   )}
                 >
@@ -115,7 +115,7 @@ const Navbar = () => {
               <RouterLink
                 to="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="btn-primary text-center"
+                className="btn-primary text-center py-4"
               >
                 Get Free Consultation
               </RouterLink>

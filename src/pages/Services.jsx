@@ -1,6 +1,7 @@
 import React from 'react';
 import ServicesGrid from '../sections/Services'; // Reuse the home grid but maybe with more info
 import { motion } from 'framer-motion';
+import { cn } from '../utils/cn';
 
 const ServicesPage = () => {
   return (
@@ -66,9 +67,5 @@ const ServicesPage = () => {
     </div>
   );
 };
-
-function cn(...inputs) {
-  return inputs.filter(Boolean).join(' ');
-}
 
 export default ServicesPage;

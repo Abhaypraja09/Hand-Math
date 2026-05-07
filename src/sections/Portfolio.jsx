@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
+import { cn } from '../utils/cn';
 
 const categories = ['All', 'Web', 'Mobile', 'Marketing'];
 
@@ -151,9 +152,5 @@ const Portfolio = () => {
   );
 };
 
-// Helper for classes (already defined in utils/cn but just for safety if used directly)
-function cn(...inputs) {
-  return inputs.filter(Boolean).join(' ');
-}
 
 export default Portfolio;

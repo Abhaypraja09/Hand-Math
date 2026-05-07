@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { Mail, Phone, MapPin, Send, MessageSquare } from 'lucide-react';
+import { cn } from '../utils/cn';
 
 const Contact = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -182,10 +183,5 @@ const Contact = () => {
     </section>
   );
 };
-
-// Helper for classes
-function cn(...inputs) {
-  return inputs.filter(Boolean).join(' ');
-}
 
 export default Contact;

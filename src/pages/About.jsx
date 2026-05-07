@@ -77,16 +77,18 @@ const About = () => {
           <div className="w-20 h-1 bg-electric mx-auto rounded-full" />
         </div>
         
-        <div className="relative border-l-2 border-black/5 ml-4 md:ml-0 md:left-1/2 md:-translate-x-1/2 space-y-12">
+        <div className="relative border-l-2 border-black/5 ml-8 md:ml-0 md:left-1/2 md:-translate-x-1/2 space-y-12">
           {milestones.map((m, i) => (
             <div key={i} className={`relative md:w-1/2 ${i % 2 === 0 ? 'md:pr-12 md:text-right md:ml-0' : 'md:pl-12 md:ml-auto'}`}>
-              <div className={`absolute top-0 w-8 h-8 rounded-full bg-white border-2 border-electric flex items-center justify-center ${i % 2 === 0 ? 'right-full translate-x-4 md:translate-x-16' : 'left-full -translate-x-4 md:-translate-x-16'}`}>
+              <div className={`absolute top-0 w-8 h-8 rounded-full bg-white border-2 border-electric flex items-center justify-center 
+                ${i % 2 === 0 ? 'right-full translate-x-4 md:translate-x-16' : 'left-full -translate-x-4 md:-translate-x-16'}
+                -left-10 md:left-auto md:right-auto`}>
                 <div className="w-2 h-2 rounded-full bg-electric" />
               </div>
-              <div className="glass p-8 rounded-2xl border border-black/5 hover:border-electric/30 transition-colors shadow-sm">
+              <div className="glass p-6 md:p-8 rounded-2xl border border-black/5 hover:border-electric/30 transition-colors shadow-sm">
                 <span className="text-electric font-bold text-xl mb-2 block">{m.year}</span>
                 <h4 className="text-xl font-heading font-bold mb-2 text-navy">{m.title}</h4>
-                <p className="text-navy/50">{m.desc}</p>
+                <p className="text-navy/50 text-sm md:text-base">{m.desc}</p>
               </div>
             </div>
           ))}
