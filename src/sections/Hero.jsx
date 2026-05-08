@@ -46,9 +46,9 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-heading font-bold mb-6 leading-[1.1] text-navy"
           >
-            We Build <br />
+            Hand Math <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric via-navy to-gold">
-              Digital Futures
+              IT Solutions
             </span>
           </motion.h1>
 
@@ -58,7 +58,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-lg md:text-xl text-navy/70 mb-10 max-w-2xl"
           >
-            Solving Complex Problems with Smart Technology. From custom ERPs to cutting-edge Cloud infrastructure, we empower businesses to scale with confidence.
+            Empowering your business with premium Software Solutions, expert Digital Marketing, and scalable Cloud Infrastructure. Hand Math IT Solutions delivers innovation that drives growth.
           </motion.p>
 
           <motion.div
