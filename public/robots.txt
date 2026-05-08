@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://handmathit.com/sitemap.xml
+Sitemap: https://handmathtechnologiesindia.com/sitemap.xml
