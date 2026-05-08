@@ -1,13 +1,19 @@
 {
-  "name": "hand-math-new",
+  "name": "hand-math",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
+  "description": "Hand Math IT Solutions Website",
+  "main": "index.html",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "start": "vite preview",
     "lint": "eslint .",
     "preview": "vite preview"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   },
   "dependencies": {
     "clsx": "^2.1.1",
