@@ -41,7 +41,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-heading font-bold mb-1 text-navy">Email Us</h4>
-                  <p className="text-navy/60">info@handmathit.com</p>
+                  <p className="text-navy/60">handmathtechnlogies@gmail.com</p>
                 </div>
               </div>
               
@@ -51,7 +51,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-heading font-bold mb-1 text-navy">Call Us</h4>
-                  <p className="text-navy/60">+91-XXXXXXXXXX</p>
+                  <p className="text-navy/60">+91 636 746 6426</p>
                 </div>
               </div>
               
@@ -61,7 +61,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-heading font-bold mb-1 text-navy">Office</h4>
-                  <p className="text-navy/60">Innovation Hub, HSR Layout, Bangalore, KA, India</p>
+                  <p className="text-navy/60">20-A, Vijetri Vihar, Adarsh Nagar, Udaipur Shastri Circle, Udaipur, Girwa, Rajasthan, India, 313001</p>
                 </div>
               </div>
             </div>
@@ -73,7 +73,7 @@ const Contact = () => {
               </h4>
               <p className="text-sm text-navy/60 mb-6">Need a quick answer? Chat with our experts on WhatsApp.</p>
               <a 
-                href="https://wa.me/91XXXXXXXXXX" 
+                href="https://wa.me/916367466426" 
                 target="_blank" 
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 text-electric font-bold hover:gap-3 transition-all"
@@ -126,16 +126,17 @@ const Contact = () => {
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-navy/60">Service Needed</label>
+                    <label className="text-sm font-medium text-navy/60">Interest Category</label>
                     <select 
                       {...register("service")}
                       className="w-full bg-black/5 border border-black/5 rounded-xl px-4 py-3 outline-none focus:border-electric transition-colors appearance-none text-navy"
                     >
-                      <option value="software">Software Solutions</option>
-                      <option value="marketing">Digital Marketing</option>
-                      <option value="mobile">Mobile App Development</option>
-                      <option value="ads">Paid Ads</option>
-                      <option value="other">Other Services</option>
+                      <option value="logkaro-demo">LogKaro CRM Demo Request</option>
+                      <option value="software">Custom Software & SaaS Dev</option>
+                      <option value="support">24/7 Managed IT Support</option>
+                      <option value="cloud">Cloud & DevOps Migration</option>
+                      <option value="security">Enterprise Cybersecurity</option>
+                      <option value="other">Other IT Services</option>
                     </select>
                   </div>
                 </div>
@@ -166,18 +167,22 @@ const Contact = () => {
         </div>
       </div>
       
-      {/* Google Map Placeholder */}
-      <div className="container mx-auto px-6 mt-16">
-        <div className="w-full h-[400px] rounded-3xl overflow-hidden border border-black/5 opacity-80 hover:opacity-100 transition-all duration-700">
-           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.750567086884!2d77.6200257745458!3d12.923720116164222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1460d3d5f697%3A0x6b149b5c21df2650!2sHSR%20Layout%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1715070000000!5m2!1sen!2sin" 
+      {/* Google Map Embedded in Glass Frame */}
+      <div className="container mx-auto px-6 mt-20">
+        <div className="relative w-full h-[450px] rounded-[40px] overflow-hidden p-2 glass-card border border-white/40 shadow-[0_20px_50px_-20px_rgba(37,99,235,0.2)] bg-white/50 backdrop-blur-3xl group">
+          <div className="absolute inset-0 bg-gradient-to-r from-electric/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+          <div className="w-full h-full rounded-[32px] overflow-hidden">
+             <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3628.3188548381596!2d73.6961173!3d24.5828453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e5628b056157%3A0xc4874c7764f691bc!2sUdaipur%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1715070000000!5m2!1sen!2sin" 
             width="100%" 
             height="100%" 
             style={{ border: 0 }} 
             allowFullScreen="" 
             loading="lazy"
             title="Office Location"
+            className="grayscale group-hover:grayscale-0 transition-all duration-700"
           ></iframe>
+          </div>
         </div>
       </div>
     </section>

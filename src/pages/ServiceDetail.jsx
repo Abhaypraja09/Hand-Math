@@ -10,7 +10,24 @@ const serviceData = {
     details: 'Our custom software solutions range from enterprise ERP systems to niche SaaS products. We use modern tech stacks to ensure performance and longevity.',
     features: ['Custom ERP/CRM Systems', 'SaaS Platform Development', 'Desktop Application Development', 'Legacy System Modernization', 'API Integration & Development']
   },
-  // Add more as needed
+  'web-development': {
+    title: 'Web Development',
+    description: 'Build high-performance, scalable, and responsive websites that drive engagement and business growth.',
+    details: 'Our web development team crafts custom solutions ranging from complex corporate websites to dynamic single-page applications. Using modern frameworks like React, Vite, and Next.js, we deliver blazing-fast experiences that rank well on search engines and convert visitors into customers.',
+    features: ['Custom Web Applications', 'Responsive UI/UX Design', 'E-Commerce Solutions', 'CMS Integration', 'SEO Optimization', 'Performance Auditing']
+  },
+  'app-development': {
+    title: 'App Development',
+    description: 'Native and cross-platform mobile applications designed for seamless user experiences on iOS and Android.',
+    details: 'We design and build mobile apps that your customers will love to use. Whether you need a native iOS/Android application or a versatile cross-platform Flutter/React Native app, we handle everything from UI/UX design to App Store deployment.',
+    features: ['Native iOS & Android Apps', 'Cross-Platform (Flutter/React Native)', 'UI/UX App Design', 'App Store Optimization (ASO)', 'Backend API Integration', 'Post-Launch Support']
+  },
+  'ai-automation': {
+    title: 'AI Automation',
+    description: 'Supercharge your business operations with next-generation artificial intelligence and workflow automation.',
+    details: 'Stop wasting time on repetitive tasks. We integrate cutting-edge AI models (like GPT-4 and custom ML solutions) into your existing workflows. From intelligent chatbots and data processing pipelines to automated customer support, we help you scale efficiently.',
+    features: ['Custom AI Integrations', 'Intelligent Chatbots', 'Workflow Automation', 'Predictive Analytics', 'Data Extraction & Processing', 'Machine Learning Solutions']
+  }
 };
 
 const ServiceDetail = () => {

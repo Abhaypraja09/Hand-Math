@@ -1,115 +1,155 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ChevronRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronRight, ShieldCheck, Terminal, Cloud, Cpu, Server, Activity, Lock, ArrowRight, BarChart3, Users } from 'lucide-react';
 import { Link as RouterLink } from 'react-router-dom';
 
 const Hero = () => {
-  const stats = [
-    { label: 'Projects Done', value: '200+' },
-    { label: 'Happy Clients', value: '50+' },
-    { label: 'Years Experience', value: '5+' },
-    { label: 'IT Services', value: '10+' },
-  ];
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.1 } }
+  };
 
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-offwhite">
-      {/* Background Particles/Mesh */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-electric/10 blur-[120px] rounded-full" />
-        <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-gold/5 blur-[120px] rounded-full" />
-        
-        {/* Grid Pattern Overlay */}
-        <div 
-          className="absolute inset-0 opacity-[0.05]" 
-          style={{ backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '50px 50px' }} 
-        />
+    <section className="relative min-h-screen pt-28 pb-20 lg:pt-32 lg:pb-32 overflow-hidden bg-[#f8fafc]">
+      {/* Clean Light Grid Background (Screenshot Match) */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        {/* Soft Radial Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-400/15 blur-[120px] rounded-full" />
+        {/* Crisp Light Grid */}
+        <div className="absolute inset-0 opacity-[0.5]" style={{ backgroundImage: 'linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-electric/30 bg-electric/5 text-electric text-sm font-medium mb-8"
+      <div className="container relative z-10 mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
+          
+          {/* Left Column: Typography */}
+          <motion.div 
+            initial="hidden" animate="visible" variants={staggerContainer}
+            className="lg:col-span-6 flex flex-col items-start"
           >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-electric opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-electric"></span>
-            </span>
-            Next-Gen IT Solutions for India & Beyond
-          </motion.div>
+            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 px-4 py-1.5 bg-white border border-blue-100 rounded-full font-semibold text-[11px] tracking-widest text-blue-600 uppercase mb-8 shadow-sm shadow-blue-500/5">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+              </span>
+              Hand Math IT Solutions
+            </motion.div>
+            
+            <motion.h1 variants={fadeUp} className="text-5xl sm:text-6xl lg:text-[72px] font-heading font-bold text-navy mb-6 leading-[1.1] tracking-tight">
+              Building the <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Digital Infrastructure</span> of Tomorrow.
+            </motion.h1>
+            
+            <motion.p variants={fadeUp} className="text-lg md:text-xl text-navy/60 mb-10 max-w-xl leading-relaxed font-light">
+              Hand Math delivers end-to-end IT services—from bespoke software development to enterprise cloud architecture. Partner with us to scale your business with absolute confidence.
+            </motion.p>
+            
+            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+              <RouterLink to="/contact" className="px-8 py-3.5 bg-navy text-white hover:bg-black rounded-full font-bold shadow-lg shadow-navy/20 transition-all hover:scale-105 flex items-center justify-center gap-2">
+                Start Your Project
+                <ArrowRight size={18} />
+              </RouterLink>
+              <RouterLink to="/logkaro" className="px-8 py-3.5 bg-white text-navy border border-black/5 hover:bg-black/5 rounded-full font-bold transition-all flex items-center justify-center gap-2">
+                Explore LogKaro CRM
+              </RouterLink>
+            </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-heading font-bold mb-6 leading-[1.1] text-navy"
-          >
-            Hand Math <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric via-navy to-gold">
-              IT Solutions
-            </span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg md:text-xl text-navy/70 mb-10 max-w-2xl"
-          >
-            Empowering your business with premium Software Solutions, expert Digital Marketing, and scalable Cloud Infrastructure. Hand Math IT Solutions delivers innovation that drives growth.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col sm:flex-row items-center gap-4 mb-20"
-          >
-            <RouterLink to="/services" className="btn-primary w-full sm:w-auto">
-              Explore Services
-            </RouterLink>
-            <RouterLink to="/portfolio" className="btn-outline w-full sm:w-auto flex items-center justify-center gap-2">
-              View Portfolio
-              <ChevronRight size={20} />
-            </RouterLink>
-          </motion.div>
-
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 w-full py-10 border-t border-black/5"
-          >
-            {stats.map((stat, idx) => (
-              <div key={idx} className="flex flex-col items-center">
-                <span className="text-4xl md:text-5xl font-heading font-bold text-navy mb-2">{stat.value}</span>
-                <span className="text-xs uppercase tracking-widest text-electric font-medium">{stat.label}</span>
+            <motion.div variants={fadeUp} className="mt-16 w-full pt-8 border-t border-black/5">
+              <div className="flex gap-8 sm:gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500 text-sm font-bold">
+                <div className="flex items-center gap-2"><Cloud size={20}/> AWS Partner</div>
+                <div className="flex items-center gap-2"><ShieldCheck size={20}/> ISO 27001</div>
+                <div className="flex items-center gap-2"><Server size={20}/> 99.9% Uptime</div>
               </div>
-            ))}
+            </motion.div>
+          </motion.div>
+
+          {/* Right Column: Sleek Light Dashboard Mockup */}
+          <motion.div 
+            initial={{ opacity: 0, x: 40, scale: 0.95 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 1, delay: 0.3, type: 'spring', stiffness: 100 }}
+            className="lg:col-span-6 relative w-full h-[500px]"
+          >
+            <div className="absolute inset-0 bg-white/80 backdrop-blur-2xl border border-white p-2 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] rounded-[2rem] z-10 flex flex-col overflow-hidden">
+              {/* Header */}
+              <div className="flex items-center gap-2 px-5 py-4 border-b border-black/5 bg-white">
+                <div className="flex gap-1.5">
+                  <span className="w-3 h-3 rounded-full bg-[#ff5f56]" />
+                  <span className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
+                  <span className="w-3 h-3 rounded-full bg-[#27c93f]" />
+                </div>
+                <div className="mx-auto bg-slate-100 rounded-lg px-4 py-1 text-[10px] font-mono text-slate-500 font-bold flex items-center gap-2">
+                  <Lock size={10} /> logkaro.com/dashboard
+                </div>
+              </div>
+
+              {/* Minimalist Dashboard Content */}
+              <div className="flex-1 bg-slate-50/50 p-8 flex flex-col gap-6">
+                {/* Metrics Row */}
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="bg-white p-4 rounded-2xl border border-black/5 shadow-sm">
+                     <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 mb-3"><Activity size={16}/></div>
+                     <span className="text-xs text-slate-500 font-bold uppercase tracking-wider block mb-1">Server Load</span>
+                     <span className="text-2xl font-bold text-slate-800">12.4%</span>
+                  </div>
+                  <div className="bg-white p-4 rounded-2xl border border-black/5 shadow-sm">
+                     <div className="w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 mb-3"><Users size={16}/></div>
+                     <span className="text-xs text-slate-500 font-bold uppercase tracking-wider block mb-1">Active Users</span>
+                     <span className="text-2xl font-bold text-slate-800">2,409</span>
+                  </div>
+                  <div className="bg-white p-4 rounded-2xl border border-black/5 shadow-sm">
+                     <div className="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 mb-3"><BarChart3 size={16}/></div>
+                     <span className="text-xs text-slate-500 font-bold uppercase tracking-wider block mb-1">Response Time</span>
+                     <span className="text-2xl font-bold text-slate-800">42ms</span>
+                  </div>
+                </div>
+
+                {/* Main Graph Area Placeholder */}
+                <div className="flex-1 bg-white rounded-2xl border border-black/5 shadow-sm p-6 flex flex-col">
+                   <div className="flex justify-between items-center mb-6">
+                     <span className="font-bold text-slate-800">System Performance</span>
+                     <div className="flex gap-2">
+                       <span className="w-2 h-2 rounded-full bg-blue-500" />
+                       <span className="w-2 h-2 rounded-full bg-indigo-500" />
+                     </div>
+                   </div>
+                   <div className="flex-1 border-b border-l border-slate-100 flex items-end justify-between px-4 pb-4 gap-4 relative">
+                      {/* Fake Graph Bars */}
+                      {[40, 60, 30, 80, 50, 90, 70, 100].map((height, i) => (
+                        <motion.div 
+                          key={i} 
+                          initial={{ height: 0 }}
+                          animate={{ height: `${height}%` }}
+                          transition={{ duration: 1, delay: i * 0.1, type: "spring" }}
+                          className="w-full bg-gradient-to-t from-blue-100 to-blue-400 rounded-t-sm"
+                        />
+                      ))}
+                   </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Floating Notification */}
+            <motion.div 
+              animate={{ y: [-10, 10, -10] }} 
+              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+              className="absolute -left-10 top-32 z-20 bg-white p-4 rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.15)] border border-slate-100 flex items-center gap-4"
+            >
+              <div className="w-10 h-10 rounded-full bg-green-50 text-green-500 flex items-center justify-center">
+                <ShieldCheck size={20} />
+              </div>
+              <div>
+                <span className="block text-sm font-bold text-slate-800">System Secure</span>
+                <span className="block text-xs text-slate-500">All checks passed</span>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
-
-      {/* Floating Geometric Shapes */}
-      <motion.div
-        animate={{ 
-          y: [0, -20, 0],
-          rotate: [0, 10, 0]
-        }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/3 left-[10%] w-12 h-12 border-2 border-electric/30 rounded-lg hidden xl:block"
-      />
-      <motion.div
-        animate={{ 
-          y: [0, 20, 0],
-          rotate: [0, -15, 0]
-        }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-1/3 right-[10%] w-16 h-16 border-2 border-gold/30 rounded-full hidden xl:block"
-      />
     </section>
   );
 };

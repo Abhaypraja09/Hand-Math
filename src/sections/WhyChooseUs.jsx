@@ -1,115 +1,121 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Clock, Zap, Target, Users, Headphones } from 'lucide-react';
+import { Shield, Clock, Zap, Target, Users, Headphones, CheckCircle2 } from 'lucide-react';
 
 const differentiators = [
   {
-    title: "24/7 Support",
-    desc: "Rounding the clock technical assistance for your critical business systems.",
-    icon: Headphones
-  },
-  {
-    title: "Agile Development",
-    desc: "Fast, iterative delivery cycles that keep you involved in every step.",
+    title: "Fully Custom Ecosystems",
+    desc: "We build custom integrations so LogKaro works perfectly with your accounting and ERP databases.",
     icon: Zap
   },
   {
-    title: "NDA Protected",
-    desc: "Your intellectual property and data are secured with strict legal protection.",
+    title: "Security-First Coding",
+    desc: "Every line of code and server configuration we deploy is fortified with enterprise-level security protocols.",
     icon: Shield
   },
   {
-    title: "On-Time Delivery",
-    desc: "We respect your deadlines and ensure project delivery within the timeline.",
+    title: "True All-in-One Tech Partner",
+    desc: "We support both your daily driver-facing SaaS applications and your backend cloud networks.",
+    icon: Target
+  },
+  {
+    title: "24/7 Managed Helpdesk",
+    desc: "Round-the-clock proactive monitoring and desktop support to guarantee zero business downtime.",
+    icon: Headphones
+  },
+  {
+    title: "Rapid Agile Deployments",
+    desc: "Continuous integration and automated pipelines deliver robust features to you in record time.",
     icon: Clock
   },
   {
-    title: "Expert Team",
-    desc: "Highly skilled professionals with years of industry-specific experience.",
+    title: "Data Integrity Guaranteed",
+    desc: "Absolute compliance and protection of your proprietary databases and company secrets.",
     icon: Users
-  },
-  {
-    title: "Results Driven",
-    desc: "Focused on achieving measurable business outcomes and ROI.",
-    icon: Target
   }
 ];
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-24 relative bg-offwhite">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
-          <div className="lg:w-1/2">
-            <motion.span
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="text-gold font-heading font-bold tracking-widest uppercase text-sm mb-4 block"
-            >
-              Why Partner With Us
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl font-heading font-bold mb-8 leading-tight text-navy"
-            >
-              Excellence in <br />
-              <span className="text-electric">Technology Delivery</span>
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-navy/70 text-lg mb-10"
-            >
-              Hand Math IT Solutions is more than just a vendor. We are your technology partner, dedicated to solving complex problems with smart, scalable innovations.
-            </motion.p>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+    <section className="py-32 relative bg-navy overflow-hidden">
+      {/* Dark Mode Background Effects */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-electric/20 blur-[150px] rounded-full" />
+        <div className="absolute bottom-0 left-0 w-[800px] h-64 bg-electric/10 blur-[120px] rounded-full" />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
+          
+          {/* Left Side: Sticky Text Content */}
+          <div className="lg:w-5/12">
+            <div className="sticky top-32">
+              <motion.span
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 text-white border border-white/10 rounded-full font-bold text-xs uppercase tracking-widest mb-6 backdrop-blur-md"
+              >
+                <span className="w-2 h-2 rounded-full bg-gold" /> Why Partner With Us
+              </motion.span>
+              
+              <motion.h2
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="text-5xl md:text-6xl font-heading font-bold mb-8 leading-[1.1] text-white tracking-tight"
+              >
+                Excellence in <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric to-purple-400">Technology Delivery</span>
+              </motion.h2>
+              
+              <motion.p
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="text-white/60 text-lg mb-10 leading-relaxed font-light"
+              >
+                Hand Math is more than just a typical software vendor. We are your dedicated technical partner, optimizing your fleet with LogKaro while supporting and scaling your entire enterprise IT environment.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+                className="space-y-4"
+              >
+                <div className="flex items-center gap-3 text-white/80"><CheckCircle2 className="text-electric" size={20}/> 100% In-house Engineering Team</div>
+                <div className="flex items-center gap-3 text-white/80"><CheckCircle2 className="text-electric" size={20}/> Guaranteed SLA Uptime</div>
+                <div className="flex items-center gap-3 text-white/80"><CheckCircle2 className="text-electric" size={20}/> Military-grade Data Encryption</div>
+              </motion.div>
+            </div>
+          </div>
+          
+          {/* Right Side: Glowing Glass Cards Grid */}
+          <div className="lg:w-7/12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {differentiators.map((item, idx) => (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, y: 10 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.3 + idx * 0.1 }}
-                  className="flex gap-4"
+                  transition={{ delay: 0.1 + (idx * 0.1) }}
+                  className="glass-card bg-white/5 border-white/10 p-8 hover:bg-white/10 transition-colors duration-500 group"
                 >
-                  <div className="shrink-0 w-12 h-12 rounded-lg bg-electric/5 flex items-center justify-center">
-                    <item.icon className="text-electric" size={24} />
+                  <div className="w-12 h-12 rounded-xl bg-electric/20 text-electric flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-electric group-hover:text-white transition-all duration-300">
+                    <item.icon size={24} />
                   </div>
-                  <div>
-                    <h4 className="text-navy font-bold mb-1">{item.title}</h4>
-                    <p className="text-navy/50 text-sm">{item.desc}</p>
-                  </div>
+                  <h4 className="text-white font-bold font-heading text-xl mb-3">{item.title}</h4>
+                  <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>
           </div>
-          
-          <div className="lg:w-1/2 relative">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="relative z-10 rounded-2xl overflow-hidden border border-black/5 shadow-2xl"
-            >
-              <img 
-                src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                alt="Our Team" 
-                className="w-full h-auto"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent opacity-30" />
-            </motion.div>
-            
-            {/* Animated accent */}
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-electric/20 blur-[80px] rounded-full animate-pulse" />
-            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-gold/10 blur-[80px] rounded-full animate-pulse" />
-          </div>
+
         </div>
       </div>
     </section>

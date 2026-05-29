@@ -1,117 +1,84 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
-
-const testimonials = [
-  {
-    name: "Rajesh Kumar",
-    company: "TechNexus India",
-    photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
-    text: "Hand Math IT delivered our ERP system well ahead of schedule. Their attention to detail and understanding of Indian business workflows is unparalleled.",
-    rating: 5
-  },
-  {
-    name: "Priya Sharma",
-    company: "Global Retail Solutions",
-    photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
-    text: "The SEO and digital marketing campaign handled by them increased our lead generation by 150%. Highly recommended for anyone looking for growth.",
-    rating: 5
-  },
-  {
-    name: "Amit Patel",
-    company: "Swift Logistics",
-    photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80",
-    text: "Our mobile app transition was seamless. The Flutter-based solution they provided is fast, stable, and our customers love the new UI.",
-    rating: 5
-  }
-];
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Star } from 'lucide-react';
 
 const Testimonials = () => {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const next = () => setIndex((prev) => (prev + 1) % testimonials.length);
-  const prev = () => setIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-
   return (
-    <section className="py-24 relative bg-offwhite overflow-hidden">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col items-center text-center mb-16">
+    <section className="py-32 bg-offwhite relative overflow-hidden border-y border-black/5">
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none hidden md:block" />
+      <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none hidden md:block" />
+
+      <div className="container mx-auto px-6 relative z-20">
+        <div className="text-center mb-16">
           <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            className="text-gold font-heading font-bold tracking-[0.3em] uppercase text-sm mb-4"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-3 py-1 bg-electric/5 text-electric rounded-full font-bold text-xs uppercase tracking-widest mb-6 border border-electric/10"
           >
-            Client Voice
+            Client Success
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-heading font-bold text-navy"
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="font-heading font-bold text-navy mb-4 text-4xl md:text-5xl"
           >
-            What They <span className="text-electric">Say About Us</span>
+            Trusted by Industry Leaders
           </motion.h2>
         </div>
-
-        <div className="max-w-4xl mx-auto relative">
-          <AnimatePresence mode='wait'>
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.5 }}
-              className="glass p-8 md:p-16 rounded-3xl border border-black/5 relative shadow-xl"
+        
+        <div className="flex gap-6 overflow-x-auto pb-10 hide-scrollbar snap-x snap-mandatory px-4 md:px-0" style={{ scrollbarWidth: 'none' }}>
+          {[
+            { 
+              name: 'Rajesh Kumar', 
+              role: 'VP Operations, TransitGo', 
+              text: 'Hand Math IT delivered our ERP system well ahead of schedule. Their attention to detail and understanding of our workflow is unparalleled.' 
+            },
+            { 
+              name: 'Sarah Jenkins', 
+              role: 'CEO, FastLogistics', 
+              text: 'The LogKaro interface is stunningly fast. Our drivers actually enjoy using the mobile app to log receipts.' 
+            },
+            { 
+              name: 'Amit Patel', 
+              role: 'CTO, Swift Networks', 
+              text: 'Our cloud migration was seamless. The AWS architecture they provided is fast, stable, and completely secure.' 
+            },
+            { 
+              name: 'Michael Ross', 
+              role: 'Fleet Manager, MetroRide', 
+              text: 'Hand Math has made our operations completely paperless. Zero downtime in two years of operation.' 
+            }
+          ].map((review, idx) => (
+            <motion.div 
+              key={idx} 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className="glass-card bg-white p-8 md:p-10 min-w-[320px] md:min-w-[450px] snap-center flex-shrink-0 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
             >
-              <Quote className="absolute top-8 left-8 text-electric/10" size={80} />
-              
-              <div className="relative z-10 flex flex-col items-center text-center">
-                <div className="flex gap-1 mb-6">
-                  {[...Array(testimonials[index].rating)].map((_, i) => (
-                    <Star key={i} className="text-gold fill-gold" size={20} />
-                  ))}
+              <div className="flex text-amber-400 mb-6 gap-1">
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+              </div>
+              <p className="text-navy text-base md:text-lg leading-relaxed mb-8 font-medium">"{review.text}"</p>
+              <div className="flex items-center gap-4 mt-auto">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-electric to-purple-500 flex items-center justify-center text-white font-bold text-lg shadow-inner">
+                  {review.name.charAt(0)}
                 </div>
-                
-                <p className="text-xl md:text-2xl text-navy/80 italic mb-10 leading-relaxed">
-                  "{testimonials[index].text}"
-                </p>
-                
-                <div className="flex items-center gap-4">
-                  <img 
-                    src={testimonials[index].photo} 
-                    alt={testimonials[index].name} 
-                    className="w-16 h-16 rounded-full border-2 border-electric p-1"
-                  />
-                  <div className="text-left">
-                    <h4 className="font-heading font-bold text-lg text-navy">{testimonials[index].name}</h4>
-                    <p className="text-electric text-sm">{testimonials[index].company}</p>
-                  </div>
+                <div>
+                  <h4 className="font-bold text-base text-navy">{review.name}</h4>
+                  <span className="text-xs text-navy/50 tracking-wide">{review.role}</span>
                 </div>
               </div>
             </motion.div>
-          </AnimatePresence>
-
-          {/* Navigation */}
-          <div className="flex justify-center gap-4 mt-12">
-            <button 
-              onClick={prev}
-              className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center hover:bg-navy hover:border-navy hover:text-white transition-all text-navy"
-            >
-              <ChevronLeft />
-            </button>
-            <button 
-              onClick={next}
-              className="w-12 h-12 rounded-full border border-black/10 flex items-center justify-center hover:bg-navy hover:border-navy hover:text-white transition-all text-navy"
-            >
-              <ChevronRight />
-            </button>
-          </div>
+          ))}
         </div>
       </div>
     </section>

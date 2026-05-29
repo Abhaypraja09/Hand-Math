@@ -4,22 +4,45 @@ import { motion } from 'framer-motion';
 
 const ContactPage = () => {
   return (
-    <div className="pt-32">
-      <section className="container mx-auto px-6 mb-12">
-        <div className="max-w-3xl text-center mx-auto mb-16">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-7xl font-heading font-bold mb-6"
-          >
-            Let's <span className="text-gold">Connect</span>
-          </motion.h1>
-          <p className="text-xl text-navy/60">
-            Have a project in mind or just want to say hi? We'd love to hear from you.
-          </p>
+    <div className="bg-offwhite min-h-screen">
+      {/* Premium Hero Section */}
+      <section className="relative pt-40 pb-12 overflow-hidden">
+        {/* Background glow */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-electric/10 blur-[150px] rounded-full pointer-events-none" />
+        <div className="absolute top-20 -left-20 w-[400px] h-[400px] bg-gold/10 blur-[120px] rounded-full pointer-events-none" />
+        
+        <div className="container mx-auto px-6 relative z-10 text-center">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white/50 border border-black/5 rounded-full font-bold text-xs uppercase tracking-widest text-navy mb-8 shadow-sm backdrop-blur-md"
+            >
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              Available for New Projects
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-6xl md:text-8xl font-heading font-bold mb-8 text-navy tracking-tight leading-[1.05]"
+            >
+              Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric to-purple-600">Connect</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-xl md:text-2xl text-navy/60 font-light max-w-2xl mx-auto"
+            >
+              Have a project in mind or need enterprise support? Our team of engineers is ready to assist you.
+            </motion.p>
+          </div>
         </div>
       </section>
 
+      {/* The Contact Form & Info Grid */}
       <ContactSection />
     </div>
   );

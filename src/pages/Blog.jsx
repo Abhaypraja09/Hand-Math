@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 
 const BlogPage = () => {
   const posts = [
-    { id: 1, title: 'The Future of AI in Enterprise Software', category: 'Technology', date: 'May 07, 2026', image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
-    { id: 2, title: 'How Cloud Migration Impacts Business Scalability', category: 'Cloud', date: 'May 05, 2026', image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
-    { id: 3, title: 'Top 5 Cybersecurity Trends for Indian Businesses', category: 'Security', date: 'May 01, 2026', image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
-    { id: 4, title: 'UI/UX Best Practices for 2026', category: 'Design', date: 'April 28, 2026', image: 'https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
-    { id: 5, title: 'Digital Marketing Strategies that actually work', category: 'Marketing', date: 'April 25, 2026', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
-    { id: 6, title: 'React vs Flutter for your next mobile app', category: 'Dev', date: 'April 20, 2026', image: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+    { id: 1, title: 'How Digital Run-Sheets Prevent Billing Leaks for Indian Taxi Fleets', category: 'Logistics', date: 'May 20, 2026', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+    { id: 2, title: 'Why Cloud-Based Taxi CRM is Mandatory for Modern Dispatch Operations', category: 'Technology', date: 'May 18, 2026', image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+    { id: 3, title: 'Top 5 Cybersecurity Auditing Metrics for Driver Management Apps', category: 'Security', date: 'May 12, 2026', image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+    { id: 4, title: 'Automating Driver Shifts & Shift Verification via Smart Mobile App', category: 'Productivity', date: 'May 08, 2026', image: 'https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+    { id: 5, title: 'The Role of IoT OBD-II Telematics in Preventing Engine Failures', category: 'IoT', date: 'May 02, 2026', image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
+    { id: 6, title: 'Optimizing Route Fare Calculations via Google Maps Routing APIs', category: 'Dev', date: 'April 25, 2026', image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80' },
   ];
 
   return (
