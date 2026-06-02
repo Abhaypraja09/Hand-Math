@@ -2,7 +2,6 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './sections/Navbar';
 import Footer from './sections/Footer';
-import WhatsappButton from './components/WhatsappButton';
 import ScrollToTop from './components/ScrollToTop';
 import ScrollReset from './components/ScrollReset';
 import LoadingScreen from './components/LoadingScreen';
@@ -51,7 +50,6 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
-          <WhatsappButton />
           <ScrollToTop />
         </Suspense>
       </div>

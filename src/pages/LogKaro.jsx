@@ -6,6 +6,8 @@ import {
   Play, Check, Star, Navigation, Activity, CreditCard, Receipt
 } from 'lucide-react';
 import { Link as RouterLink } from 'react-router-dom';
+import SEO from '../components/SEO';
+import FAQSection from '../components/FAQSection';
 
 const LogKaro = () => {
   // Animation Variants
@@ -19,6 +21,39 @@ const LogKaro = () => {
     visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.2 } }
   };
 
+  const softwareSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "LogKaro CRM",
+    "operatingSystem": "Web, iOS, Android",
+    "applicationCategory": "BusinessApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    },
+    "description": "Smart Taxi & Fleet Management CRM. Manage your entire taxi fleet, track drivers in real-time, automate payroll, and handle vehicle compliance on a single, powerful platform."
+  };
+
+  const logKaroFaqs = [
+    {
+      question: "What is LogKaro CRM?",
+      answer: "LogKaro CRM is a specialized Smart Taxi & Fleet Management software designed to automate driver tracking, payroll, vehicle compliance, and overall logistics operations in a single dashboard."
+    },
+    {
+      question: "Does LogKaro have a mobile app for drivers?",
+      answer: "Yes, LogKaro provides a fast, lightweight Progressive Web App (PWA) for drivers. They can log trips, upload expenses, report accidents, and mark their attendance directly from their mobile phones."
+    },
+    {
+      question: "Can it track vehicle compliance like insurance and PUC?",
+      answer: "Absolutely. LogKaro automatically alerts you 30 days in advance for expiring vehicle documents like RC, PUC, Fitness certificates, Permits, and Insurance."
+    },
+    {
+      question: "Does LogKaro handle driver payroll?",
+      answer: "Yes, LogKaro features a Smart Payroll & Expense module that automates driver salaries, daily wages, overtime (OT), and daily expenses like fuel logs and parking fees."
+    }
+  ];
+
   return (
     <motion.main
       initial={{ opacity: 0 }}
@@ -26,6 +61,13 @@ const LogKaro = () => {
       exit={{ opacity: 0 }}
       className="bg-offwhite text-navy min-h-screen pt-28 font-body overflow-hidden"
     >
+      <SEO 
+        title="LogKaro - Smart Taxi & Fleet Management CRM" 
+        description="Manage your entire taxi fleet, track drivers in real-time, automate payroll, and handle vehicle compliance with LogKaro CRM."
+        url="/logkaro" 
+        schema={softwareSchema} 
+      />
+
       {/* 1. HERO SECTION - Breathtaking SaaS Layout */}
       <section className="relative pt-6 pb-24 lg:pt-8 lg:pb-32 overflow-hidden">
         {/* Abstract Background Elements */}
@@ -68,7 +110,7 @@ const LogKaro = () => {
               initial={{ opacity: 0, x: 40, scale: 0.95 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
               transition={{ duration: 1, delay: 0.3, type: 'spring', stiffness: 100 }}
-              className="lg:col-span-6 relative"
+              className="lg:col-span-6 relative lg:-mt-16"
             >
               <img 
                 src="/dashboard-preview.png" 
@@ -115,8 +157,6 @@ const LogKaro = () => {
           </div>
         </div>
       </section>
-
-
 
       {/* 2. BENTO GRID FEATURES SECTION */}
       <section className="py-24 bg-white relative z-20">
@@ -365,7 +405,10 @@ const LogKaro = () => {
         </div>
       </section>
 
-      {/* 5. PREMIUM CTA SECTION */}
+      {/* 5. FAQ SECTION FOR GEO */}
+      <FAQSection faqs={logKaroFaqs} title="LogKaro FAQs" subtitle="Common questions about our fleet management CRM." />
+
+      {/* 6. PREMIUM CTA SECTION */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-navy" />
         <div className="absolute inset-0 bg-gradient-to-br from-electric/40 to-transparent" />

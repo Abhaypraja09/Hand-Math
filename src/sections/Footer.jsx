@@ -41,11 +41,11 @@ const Footer = () => {
             </p>
 
             <div className="space-y-4 mb-8">
-              <a href="mailto:handmathtechnlogies@gmail.com" className="flex items-center gap-3 text-white/80 hover:text-electric transition-colors group">
+              <a href="mailto:handmathtechnologies@gmail.com" className="flex items-center gap-3 text-white/80 hover:text-electric transition-colors group">
                 <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-electric/20 transition-colors">
                   <Mail size={18} />
                 </div>
-                <span className="text-sm font-medium">handmathtechnlogies@gmail.com</span>
+                <span className="text-sm font-medium">handmathtechnologies@gmail.com</span>
               </a>
               <a href="tel:+916367466426" className="flex items-center gap-3 text-white/80 hover:text-electric transition-colors group">
                 <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-electric/20 transition-colors">

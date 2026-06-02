@@ -174,87 +174,68 @@ const Navbar = () => {
                       animate="visible"
                       exit="exit"
                       className={cn(
-                        "absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-2xl rounded-3xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-white/40 overflow-hidden z-50",
-                        link.type === 'mega' ? "w-[700px]" : "w-[340px]"
+                        "absolute top-[calc(100%+16px)] left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-2xl rounded-[28px] shadow-[0_40px_80px_-20px_rgba(37,99,235,0.08)] border border-blue-100/50 overflow-hidden z-50 p-2",
+                        link.type === 'mega' ? "w-[660px]" : "w-[300px]"
                       )}
                     >
                       {link.type === 'mega' ? (
-                        /* MEGA MENU (Products) */
-                        <div className="grid grid-cols-12 gap-0">
-                          {/* Left: Featured Product */}
-                          <div className="col-span-5 relative overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-600 to-electric p-8 text-white flex flex-col justify-between group">
-                            {/* Animated Background Elements */}
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-10 -mt-10 group-hover:scale-150 transition-transform duration-700" />
-                            <div className="absolute bottom-0 left-0 w-40 h-40 bg-pink-500/20 rounded-full blur-2xl -ml-10 -mb-10 group-hover:scale-150 transition-transform duration-700" />
-                            
-                            <div className="relative z-10 flex flex-col items-start h-full">
-                              <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-[10px] font-bold uppercase tracking-widest border border-white/20 mb-6 shadow-sm">
-                                {link.featured.badge}
-                              </span>
-                              
-                              <motion.div 
-                                animate={{ y: [0, -8, 0] }} 
-                                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                                className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/20 mb-6 shadow-xl"
-                              >
-                                <link.featured.icon size={32} className="text-white drop-shadow-md" />
-                              </motion.div>
-                              
-                              <h4 className="text-2xl font-bold font-heading mb-2 drop-shadow-sm">{link.featured.name}</h4>
-                              <p className="text-white/80 text-sm leading-relaxed mb-8">{link.featured.desc}</p>
-                              
-                              <RouterLink 
-                                to={link.featured.path} 
+                        /* MEGA MENU (Unified Grid Layout) */
+                        <div className="p-2 grid grid-cols-2 gap-2">
+                          {[ { ...link.featured, isFeatured: true }, ...link.items ].map((item, idx) => {
+                            const totalItems = link.items.length + 1;
+                            const isOdd = totalItems % 2 !== 0;
+                            const isFullWidth = idx === 0 && isOdd;
+
+                            return (
+                              <RouterLink
+                                key={item.name}
+                                to={item.path}
                                 onClick={() => setActiveDropdown(null)}
-                                className="mt-auto inline-flex items-center gap-2 bg-white text-electric px-5 py-2.5 rounded-full font-bold text-sm hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] hover:scale-105 transition-all duration-300"
+                                className={cn(
+                                  "group flex items-start gap-4 p-4 rounded-2xl hover:bg-blue-50/60 transition-all duration-300 border border-transparent hover:border-blue-100/60",
+                                  isFullWidth ? "col-span-2 bg-gradient-to-r from-blue-50/30 via-transparent to-transparent" : "col-span-1"
+                                )}
                               >
-                                {link.featured.cta} <ArrowRight size={16} />
+                                <div className={cn(
+                                  "w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-all duration-300 shadow-sm border",
+                                  item.isFeatured 
+                                    ? "bg-blue-600 text-white border-blue-500 shadow-blue-500/20 group-hover:scale-105 group-hover:shadow-blue-500/40" 
+                                    : "bg-white text-blue-600 border-slate-100 group-hover:bg-blue-100 group-hover:scale-105 group-hover:border-blue-200"
+                                )}>
+                                  <item.icon size={22} className={item.isFeatured ? "" : "opacity-80 group-hover:opacity-100"} />
+                                </div>
+                                <div className="flex flex-col flex-1 justify-center">
+                                  <div className="flex items-center gap-2 mb-1">
+                                    <span className="font-bold text-[15px] text-navy group-hover:text-blue-700 transition-colors">{item.name}</span>
+                                    {item.badge && (
+                                      <span className="text-[9px] font-bold text-blue-700 bg-blue-100/80 px-2 py-0.5 rounded-md uppercase tracking-wider">
+                                        {item.badge}
+                                      </span>
+                                    )}
+                                  </div>
+                                  <span className="text-[13px] text-navy/60 font-medium leading-relaxed">{item.desc}</span>
+                                </div>
                               </RouterLink>
-                            </div>
-                          </div>
-                          
-                          {/* Right: Other Products */}
-                          <div className="col-span-7 p-6 bg-white flex flex-col gap-2">
-                            <span className="text-xs font-bold text-navy/40 uppercase tracking-wider px-3 pb-2 block">More Products</span>
-                            {link.items.map((item, idx) => (
-                              <motion.div key={item.name} variants={itemVariants}>
-                                <RouterLink
-                                  to={item.path}
-                                  onClick={() => setActiveDropdown(null)}
-                                  className="group flex items-start gap-4 p-4 rounded-2xl hover:bg-black/5 transition-colors"
-                                >
-                                  <div className="w-12 h-12 rounded-xl bg-electric/10 text-electric flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-electric group-hover:text-white transition-all duration-300 shadow-sm">
-                                    <item.icon size={22} />
-                                  </div>
-                                  <div className="flex flex-col flex-1">
-                                    <div className="flex items-center justify-between">
-                                      <span className="font-bold text-navy group-hover:text-electric transition-colors">{item.name}</span>
-                                      <ChevronRight size={16} className="text-navy/30 group-hover:text-electric group-hover:translate-x-1 transition-all" />
-                                    </div>
-                                    <span className="text-sm text-navy/60 mt-1">{item.desc}</span>
-                                  </div>
-                                </RouterLink>
-                              </motion.div>
-                            ))}
-                          </div>
+                            );
+                          })}
                         </div>
                       ) : (
                         /* SIMPLE DROPDOWN (Services) */
-                        <div className="p-4 flex flex-col gap-1 bg-white">
-                           <span className="text-xs font-bold text-navy/40 uppercase tracking-wider px-3 pb-2 pt-1 block">Our Services</span>
+                        <div className="flex flex-col gap-1 p-2">
+                           <span className="text-[9px] font-bold text-navy/40 uppercase tracking-[0.2em] px-3 pb-2 pt-2 block">Our Services</span>
                           {link.items.map((item) => (
                             <motion.div key={item.name} variants={itemVariants}>
                               <RouterLink
                                 to={item.path}
                                 onClick={() => setActiveDropdown(null)}
-                                className="group flex items-center gap-4 p-3 rounded-xl hover:bg-black/5 transition-all"
+                                className="group flex items-center gap-4 p-3 rounded-2xl hover:bg-blue-50/50 transition-all duration-300 border border-transparent hover:border-blue-100/50"
                               >
-                                <div className="w-10 h-10 rounded-lg bg-black/5 text-navy/70 flex items-center justify-center group-hover:bg-electric/10 group-hover:text-electric transition-colors">
-                                  <item.icon size={20} />
+                                <div className="w-10 h-10 rounded-xl bg-slate-50 text-slate-500 flex items-center justify-center shrink-0 group-hover:scale-105 group-hover:bg-blue-100 group-hover:text-blue-600 transition-all duration-300 shadow-sm border border-slate-100 group-hover:border-blue-200">
+                                  <item.icon size={18} className="opacity-80 group-hover:opacity-100 transition-opacity" />
                                 </div>
                                 <div className="flex flex-col">
-                                  <span className="font-bold text-sm text-navy group-hover:text-electric transition-colors">{item.name}</span>
-                                  <span className="text-xs text-navy/50">{item.desc}</span>
+                                  <span className="font-bold text-sm text-navy group-hover:text-blue-600 transition-colors">{item.name}</span>
+                                  {item.desc && <span className="text-xs text-navy/50 mt-0.5 font-medium">{item.desc}</span>}
                                 </div>
                               </RouterLink>
                             </motion.div>
