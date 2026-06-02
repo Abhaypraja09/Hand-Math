@@ -275,11 +275,11 @@ const Navbar = () => {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="lg:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-xl border-b border-black/10 shadow-2xl overflow-hidden"
+            className="lg:hidden absolute top-[calc(100%+10px)] left-0 w-[calc(100vw-32px)] ml-4 sm:ml-6 sm:w-[calc(100vw-48px)] bg-white/95 backdrop-blur-xl border border-black/10 rounded-2xl shadow-2xl overflow-hidden z-50"
           >
-            <div className="container mx-auto px-6 py-8 flex flex-col gap-6 max-h-[80vh] overflow-y-auto">
+            <div className="container mx-auto px-6 py-6 flex flex-col gap-5 max-h-[75vh] overflow-y-auto hide-scrollbar">
               {navLinks.map((link) => (
-                <div key={link.name} className="border-b border-black/5 pb-4 last:border-0">
+                <div key={link.name} className="border-b border-black/5 pb-3 last:border-0">
                   <div
                     className="flex justify-between items-center cursor-pointer group"
                     onClick={() => link.isDropdown ? toggleMobileDropdown(link.name) : (setIsMobileMenuOpen(false))}
@@ -287,7 +287,7 @@ const Navbar = () => {
                     <RouterLink
                       to={link.isDropdown ? (link.path || '#') : link.path}
                       className={cn(
-                        "text-xl font-heading font-bold transition-colors flex items-center gap-3",
+                        "text-lg font-heading font-bold transition-colors flex items-center gap-3",
                         location.pathname === link.path ? "text-electric" : "text-navy"
                       )}
                     >
@@ -299,8 +299,8 @@ const Navbar = () => {
                       )}
                     </RouterLink>
                     {link.isDropdown && (
-                      <div className={cn("p-2 rounded-full bg-black/5 transition-transform duration-300", mobileDropdownOpen === link.name && "rotate-180 bg-electric/10 text-electric")}>
-                        <ChevronDown size={20} />
+                      <div className={cn("p-1.5 rounded-full bg-black/5 transition-transform duration-300", mobileDropdownOpen === link.name && "rotate-180 bg-electric/10 text-electric")}>
+                        <ChevronDown size={18} />
                       </div>
                     )}
                   </div>
@@ -315,22 +315,22 @@ const Navbar = () => {
                           exit={{ opacity: 0, height: 0 }}
                           className="overflow-hidden"
                         >
-                          <div className="flex flex-col gap-3 pt-4 pb-2">
+                          <div className="flex flex-col gap-2 pt-3 pb-1">
                             {link.type === 'mega' && (
                               <RouterLink
                                 to={link.featured.path}
                                 onClick={() => setIsMobileMenuOpen(false)}
-                                className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-br from-indigo-50 to-purple-50 border border-purple-100"
+                                className="flex items-center gap-3 p-3 rounded-2xl bg-gradient-to-br from-indigo-50 to-purple-50 border border-purple-100"
                               >
-                                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white flex items-center justify-center shrink-0 shadow-md">
-                                  <link.featured.icon size={24} />
+                                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 text-white flex items-center justify-center shrink-0 shadow-md">
+                                  <link.featured.icon size={20} />
                                 </div>
                                 <div>
                                   <div className="flex items-center gap-2">
-                                    <span className="font-bold text-navy">{link.featured.name}</span>
-                                    <span className="text-[9px] bg-electric text-white px-1.5 py-0.5 rounded font-bold uppercase">{link.featured.badge}</span>
+                                    <span className="font-bold text-navy text-sm">{link.featured.name}</span>
+                                    <span className="text-[8px] bg-electric text-white px-1 py-0.5 rounded font-bold uppercase">{link.featured.badge}</span>
                                   </div>
-                                  <span className="text-xs text-navy/60 mt-0.5 block">{link.featured.desc}</span>
+                                  <span className="text-[11px] text-navy/60 mt-0.5 block">{link.featured.desc}</span>
                                 </div>
                               </RouterLink>
                             )}
@@ -340,14 +340,14 @@ const Navbar = () => {
                                 key={item.name}
                                 to={item.path}
                                 onClick={() => setIsMobileMenuOpen(false)}
-                                className="flex items-center gap-4 p-3 rounded-xl hover:bg-black/5 transition-colors"
+                                className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-black/5 transition-colors"
                               >
-                                <div className="w-10 h-10 rounded-lg bg-black/5 text-navy/60 flex items-center justify-center shrink-0">
-                                  <item.icon size={20} />
+                                <div className="w-8 h-8 rounded-lg bg-black/5 text-navy/60 flex items-center justify-center shrink-0">
+                                  <item.icon size={16} />
                                 </div>
                                 <div className="flex flex-col">
-                                  <span className="font-bold text-sm text-navy">{item.name}</span>
-                                  {item.desc && <span className="text-xs text-navy/50">{item.desc}</span>}
+                                  <span className="font-bold text-[13px] text-navy">{item.name}</span>
+                                  {item.desc && <span className="text-[11px] text-navy/50">{item.desc}</span>}
                                 </div>
                               </RouterLink>
                             ))}
@@ -362,7 +362,7 @@ const Navbar = () => {
               <RouterLink
                 to="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="btn-primary text-center py-4 mt-2 shadow-xl shadow-electric/20 rounded-xl"
+                className="btn-primary text-center py-3.5 mt-2 shadow-xl shadow-electric/20 rounded-xl font-bold"
               >
                 Get IT Consultation
               </RouterLink>

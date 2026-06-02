@@ -168,8 +168,8 @@ const Contact = () => {
       </div>
       
       {/* Google Map Embedded in Glass Frame */}
-      <div className="container mx-auto px-6 mt-20">
-        <div className="relative w-full h-[450px] rounded-[40px] overflow-hidden p-2 glass-card border border-white/40 shadow-[0_20px_50px_-20px_rgba(37,99,235,0.2)] bg-white/50 backdrop-blur-3xl group">
+      <div className="container mx-auto px-6 mt-16 md:mt-20">
+        <div className="relative w-full h-[300px] md:h-[450px] rounded-[32px] md:rounded-[40px] overflow-hidden p-1 md:p-2 glass-card border border-white/40 shadow-[0_20px_50px_-20px_rgba(37,99,235,0.2)] bg-white/50 backdrop-blur-3xl group">
           <div className="absolute inset-0 bg-gradient-to-r from-electric/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
           <div className="w-full h-full rounded-[32px] overflow-hidden">
              <iframe 

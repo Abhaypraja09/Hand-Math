@@ -6,10 +6,10 @@ const ContactPage = () => {
   return (
     <div className="bg-offwhite min-h-screen">
       {/* Premium Hero Section */}
-      <section className="relative pt-40 pb-12 overflow-hidden">
+      <section className="relative pt-32 md:pt-40 pb-12 overflow-hidden">
         {/* Background glow */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-electric/10 blur-[150px] rounded-full pointer-events-none" />
-        <div className="absolute top-20 -left-20 w-[400px] h-[400px] bg-gold/10 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-electric/10 blur-[150px] rounded-full pointer-events-none" />
+        <div className="absolute top-20 -left-20 w-[200px] md:w-[400px] h-[200px] md:h-[400px] bg-gold/10 blur-[120px] rounded-full pointer-events-none" />
         
         <div className="container mx-auto px-6 relative z-10 text-center">
           <div className="max-w-4xl mx-auto">

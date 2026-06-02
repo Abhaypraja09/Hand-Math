@@ -17,7 +17,7 @@ const Footer = () => {
       <div className="container mx-auto px-6 relative z-10">
         
         {/* Massive Top CTA */}
-        <div className="flex flex-col md:flex-row items-center justify-between pb-16 mb-16 border-b border-white/10 gap-8">
+        <div className="flex flex-col md:flex-row items-center justify-between pb-16 mb-16 border-b border-white/10 gap-8 text-center md:text-left">
           <div>
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-white mb-4">
               Have a project in mind?

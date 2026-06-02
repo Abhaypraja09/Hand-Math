@@ -71,7 +71,7 @@ const LogKaro = () => {
       {/* 1. HERO SECTION - Breathtaking SaaS Layout */}
       <section className="relative pt-6 pb-24 lg:pt-8 lg:pb-32 overflow-hidden">
         {/* Abstract Background Elements */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-electric/10 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[800px] md:h-[800px] bg-electric/10 blur-[120px] rounded-full pointer-events-none" />
         
         <div className="container relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center">
@@ -85,7 +85,7 @@ const LogKaro = () => {
                 <SparklesIcon /> Introducing LogKaro v2.0
               </motion.div>
               
-              <motion.h1 variants={fadeUp} className="font-heading font-bold text-navy mb-6 leading-[1.05] tracking-tight">
+              <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl lg:text-[64px] font-heading font-bold text-navy mb-6 leading-[1.05] tracking-tight">
                 Smart Taxi & <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric to-purple-600">Fleet Management CRM.</span>
               </motion.h1>
               
@@ -182,7 +182,7 @@ const LogKaro = () => {
                 </RouterLink>
               </div>
               {/* Decorative Map Graphic */}
-              <div className="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-blue-100/50 to-transparent flex items-center justify-center opacity-50 group-hover:opacity-100 transition-opacity">
+              <div className="hidden md:flex absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-blue-100/50 to-transparent items-center justify-center opacity-50 group-hover:opacity-100 transition-opacity">
                 <div className="w-64 h-64 border border-electric/20 rounded-full flex items-center justify-center relative">
                   <div className="w-48 h-48 border border-electric/20 rounded-full animate-ping" style={{ animationDuration: '3s' }} />
                   <div className="w-3 h-3 bg-electric rounded-full absolute top-10 left-10 shadow-[0_0_15px_rgba(37,99,235,1)]" />
@@ -246,7 +246,7 @@ const LogKaro = () => {
       {/* 3. DASHBOARD SHOWCASE SECTION */}
       <section className="py-24 bg-navy relative z-20 overflow-hidden">
         {/* Background Gradients */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-electric/20 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] h-[500px] bg-electric/20 blur-[120px] rounded-full pointer-events-none" />
         
         <div className="container relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
@@ -284,7 +284,7 @@ const LogKaro = () => {
                 {/* Main Content Area */}
                 <div className="md:col-span-9 space-y-6">
                   {/* Top KPIs */}
-                  <div className="grid grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                      <div className="p-4 bg-white/5 rounded-xl border border-white/10">
                        <span className="text-white/50 text-xs block mb-2 uppercase">Total Revenue</span>
                        <span className="text-2xl font-bold text-white font-heading">₹2,84,500</span>
@@ -415,7 +415,7 @@ const LogKaro = () => {
         <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-electric/20 to-transparent blur-3xl" />
         
         <div className="container relative z-10 text-center text-white">
-          <h2 className="font-heading font-bold text-5xl md:text-6xl mb-6">Ready to accelerate?</h2>
+          <h2 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl mb-6">Ready to accelerate?</h2>
           <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-10">
             Join hundreds of modern businesses scaling their fleets with LogKaro CRM.
           </p>

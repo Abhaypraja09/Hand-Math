@@ -19,7 +19,7 @@ const Hero = () => {
       {/* Clean Light Grid Background (Screenshot Match) */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         {/* Soft Radial Glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-400/15 blur-[120px] rounded-full" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[800px] md:h-[800px] bg-blue-400/15 blur-[120px] rounded-full" />
         {/* Crisp Light Grid */}
         <div className="absolute inset-0 opacity-[0.5]" style={{ backgroundImage: 'linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
       </div>
@@ -40,11 +40,11 @@ const Hero = () => {
               Hand Math IT Solutions
             </motion.div>
             
-            <motion.h1 variants={fadeUp} className="text-5xl sm:text-6xl lg:text-[72px] font-heading font-bold text-navy mb-6 leading-[1.1] tracking-tight">
+            <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl lg:text-[72px] font-heading font-bold text-navy mb-6 leading-[1.1] tracking-tight">
               Building the <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Digital Infrastructure</span> of Tomorrow.
             </motion.h1>
             
-            <motion.p variants={fadeUp} className="text-lg md:text-xl text-navy/60 mb-10 max-w-xl leading-relaxed font-light">
+            <motion.p variants={fadeUp} className="text-base sm:text-lg md:text-xl text-navy/60 mb-8 max-w-xl leading-relaxed font-light">
               Hand Math delivers end-to-end IT services—from bespoke software development to enterprise cloud architecture. Partner with us to scale your business with absolute confidence.
             </motion.p>
             
@@ -72,52 +72,58 @@ const Hero = () => {
             initial={{ opacity: 0, x: 40, scale: 0.95 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 1, delay: 0.3, type: 'spring', stiffness: 100 }}
-            className="lg:col-span-6 relative w-full h-[500px]"
+            className="lg:col-span-6 relative w-full h-[450px] md:h-[500px] mt-8 lg:mt-0"
           >
-            <div className="absolute inset-0 bg-white/80 backdrop-blur-2xl border border-white p-2 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] rounded-[2rem] z-10 flex flex-col overflow-hidden">
+            <div className="absolute inset-0 bg-white/80 backdrop-blur-2xl border border-white p-1 md:p-2 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.1)] rounded-[1.5rem] md:rounded-[2rem] z-10 flex flex-col overflow-hidden">
               {/* Header */}
-              <div className="flex items-center gap-2 px-5 py-4 border-b border-black/5 bg-white">
+              <div className="flex items-center gap-2 px-3 md:px-5 py-3 md:py-4 border-b border-black/5 bg-white">
                 <div className="flex gap-1.5">
-                  <span className="w-3 h-3 rounded-full bg-[#ff5f56]" />
-                  <span className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
-                  <span className="w-3 h-3 rounded-full bg-[#27c93f]" />
+                  <span className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#ff5f56]" />
+                  <span className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#ffbd2e]" />
+                  <span className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-[#27c93f]" />
                 </div>
-                <div className="mx-auto bg-slate-100 rounded-lg px-4 py-1 text-[10px] font-mono text-slate-500 font-bold flex items-center gap-2">
+                <div className="mx-auto bg-slate-100 rounded-lg px-3 py-1 text-[9px] md:text-[10px] font-mono text-slate-500 font-bold flex items-center gap-2">
                   <Lock size={10} /> logkaro.com/dashboard
                 </div>
               </div>
 
               {/* Minimalist Dashboard Content */}
-              <div className="flex-1 bg-slate-50/50 p-8 flex flex-col gap-6">
+              <div className="flex-1 bg-slate-50/50 p-3 md:p-8 flex flex-col gap-3 md:gap-6">
                 {/* Metrics Row */}
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="bg-white p-4 rounded-2xl border border-black/5 shadow-sm">
-                     <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 mb-3"><Activity size={16}/></div>
-                     <span className="text-xs text-slate-500 font-bold uppercase tracking-wider block mb-1">Server Load</span>
-                     <span className="text-2xl font-bold text-slate-800">12.4%</span>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4">
+                  <div className="bg-white p-3 md:p-4 rounded-2xl border border-black/5 shadow-sm flex items-center sm:flex-col sm:items-start gap-3 sm:gap-0">
+                     <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-600 sm:mb-3 shrink-0"><Activity size={16}/></div>
+                     <div>
+                       <span className="text-[10px] md:text-xs text-slate-500 font-bold uppercase tracking-wider block mb-0.5 sm:mb-1">Server Load</span>
+                       <span className="text-xl md:text-2xl font-bold text-slate-800">12.4%</span>
+                     </div>
                   </div>
-                  <div className="bg-white p-4 rounded-2xl border border-black/5 shadow-sm">
-                     <div className="w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 mb-3"><Users size={16}/></div>
-                     <span className="text-xs text-slate-500 font-bold uppercase tracking-wider block mb-1">Active Users</span>
-                     <span className="text-2xl font-bold text-slate-800">2,409</span>
+                  <div className="bg-white p-3 md:p-4 rounded-2xl border border-black/5 shadow-sm flex items-center sm:flex-col sm:items-start gap-3 sm:gap-0">
+                     <div className="w-8 h-8 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-600 sm:mb-3 shrink-0"><Users size={16}/></div>
+                     <div>
+                       <span className="text-[10px] md:text-xs text-slate-500 font-bold uppercase tracking-wider block mb-0.5 sm:mb-1">Active Users</span>
+                       <span className="text-xl md:text-2xl font-bold text-slate-800">2,409</span>
+                     </div>
                   </div>
-                  <div className="bg-white p-4 rounded-2xl border border-black/5 shadow-sm">
-                     <div className="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 mb-3"><BarChart3 size={16}/></div>
-                     <span className="text-xs text-slate-500 font-bold uppercase tracking-wider block mb-1">Response Time</span>
-                     <span className="text-2xl font-bold text-slate-800">42ms</span>
+                  <div className="bg-white p-3 md:p-4 rounded-2xl border border-black/5 shadow-sm flex items-center sm:flex-col sm:items-start gap-3 sm:gap-0 hidden sm:flex">
+                     <div className="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 mb-3 shrink-0"><BarChart3 size={16}/></div>
+                     <div>
+                       <span className="text-xs text-slate-500 font-bold uppercase tracking-wider block mb-1">Response Time</span>
+                       <span className="text-2xl font-bold text-slate-800">42ms</span>
+                     </div>
                   </div>
                 </div>
 
                 {/* Main Graph Area Placeholder */}
-                <div className="flex-1 bg-white rounded-2xl border border-black/5 shadow-sm p-6 flex flex-col">
+                <div className="flex-1 bg-white rounded-2xl border border-black/5 shadow-sm p-4 md:p-6 flex flex-col hidden sm:flex">
                    <div className="flex justify-between items-center mb-6">
-                     <span className="font-bold text-slate-800">System Performance</span>
+                     <span className="font-bold text-slate-800 text-sm md:text-base">System Performance</span>
                      <div className="flex gap-2">
                        <span className="w-2 h-2 rounded-full bg-blue-500" />
                        <span className="w-2 h-2 rounded-full bg-indigo-500" />
                      </div>
                    </div>
-                   <div className="flex-1 border-b border-l border-slate-100 flex items-end justify-between px-4 pb-4 gap-4 relative">
+                   <div className="flex-1 border-b border-l border-slate-100 flex items-end justify-between px-2 md:px-4 pb-2 md:pb-4 gap-2 md:gap-4 relative">
                       {/* Fake Graph Bars */}
                       {[40, 60, 30, 80, 50, 90, 70, 100].map((height, i) => (
                         <motion.div 
@@ -137,14 +143,14 @@ const Hero = () => {
             <motion.div 
               animate={{ y: [-10, 10, -10] }} 
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              className="absolute -left-10 top-32 z-20 bg-white p-4 rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.15)] border border-slate-100 flex items-center gap-4"
+              className="absolute -left-2 md:-left-10 top-16 md:top-32 z-20 bg-white p-3 md:p-4 rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.15)] border border-slate-100 flex items-center gap-3 md:gap-4 scale-90 md:scale-100 origin-left"
             >
-              <div className="w-10 h-10 rounded-full bg-green-50 text-green-500 flex items-center justify-center">
-                <ShieldCheck size={20} />
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-50 text-green-500 flex items-center justify-center shrink-0">
+                <ShieldCheck size={18} />
               </div>
               <div>
-                <span className="block text-sm font-bold text-slate-800">System Secure</span>
-                <span className="block text-xs text-slate-500">All checks passed</span>
+                <span className="block text-xs md:text-sm font-bold text-slate-800">System Secure</span>
+                <span className="block text-[10px] md:text-xs text-slate-500">All checks passed</span>
               </div>
             </motion.div>
           </motion.div>
