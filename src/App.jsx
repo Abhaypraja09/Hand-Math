@@ -23,6 +23,7 @@ const SoftwareDefine = lazy(() => import('./pages/SoftwareDefine'));
 const Workflow = lazy(() => import('./pages/Workflow'));
 const Features = lazy(() => import('./pages/Features'));
 const Pricing = lazy(() => import('./pages/Pricing'));
+const Products = lazy(() => import('./pages/Products'));
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
             <Route path="/logkaro/workflow" element={<Workflow />} />
             <Route path="/logkaro/features" element={<Features />} />
             <Route path="/logkaro/pricing" element={<Pricing />} />
+            <Route path="/products" element={<Products />} />
             <Route path="/services" element={<Services />} />
             <Route path="/services/web-development" element={<WebDevelopment />} />
             <Route path="/services/app-development" element={<AppDevelopment />} />
