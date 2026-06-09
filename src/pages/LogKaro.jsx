@@ -94,7 +94,7 @@ const LogKaro = () => {
               </motion.p>
               
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                <a href="https://driver.yatreedestination.com/login" target="_blank" rel="noopener noreferrer" className="btn-primary flex items-center justify-center gap-2">
+                <a href="https://logkaro.com/login" target="_blank" rel="noopener noreferrer" className="btn-primary flex items-center justify-center gap-2">
                   Access Portal
                   <ArrowRight size={18} />
                 </a>
@@ -423,7 +423,7 @@ const LogKaro = () => {
             <RouterLink to="/contact" className="px-8 py-4 rounded-full bg-white text-navy font-bold hover:scale-105 transition-transform shadow-[0_0_30px_rgba(255,255,255,0.2)]">
               Get Started Now
             </RouterLink>
-            <a href="https://driver.yatreedestination.com/login" target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-full border border-white/20 bg-white/5 backdrop-blur text-white font-bold hover:bg-white/10 transition-colors">
+            <a href="https://logkaro.com/login" target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-full border border-white/20 bg-white/5 backdrop-blur text-white font-bold hover:bg-white/10 transition-colors">
               Access Portal
             </a>
           </div>
