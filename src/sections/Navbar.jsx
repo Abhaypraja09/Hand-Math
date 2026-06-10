@@ -104,6 +104,7 @@ const Navbar = () => {
         { name: 'FinTech Solutions', path: '/portfolio?filter=fintech', icon: Receipt, desc: 'Secure financial platforms.' },
       ]
     },
+    { name: 'Knowledge Base', path: '/knowledge-base' },
     { name: 'Contact Us', path: '/contact' },
   ];
 

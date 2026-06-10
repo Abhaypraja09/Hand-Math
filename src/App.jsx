@@ -24,6 +24,8 @@ const Workflow = lazy(() => import('./pages/Workflow'));
 const Features = lazy(() => import('./pages/Features'));
 const Pricing = lazy(() => import('./pages/Pricing'));
 const Products = lazy(() => import('./pages/Products'));
+const KnowledgeBase = lazy(() => import('./pages/KnowledgeBase'));
+const LogKaroGuide = lazy(() => import('./pages/LogKaroGuide'));
 
 function App() {
   return (
@@ -48,6 +50,8 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/knowledge-base" element={<KnowledgeBase />} />
+            <Route path="/knowledge-base/logkaro-fleet-management" element={<LogKaroGuide />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
